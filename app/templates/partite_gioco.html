@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{gioco["nome"]}}</h1>
+  {% for partita in partite %}
+  <article>
+    <header>
+      <h2>{{ partita['nome']}}</h2>
+      <p>data:{{ partita['data']}}</p>
+      <p>vincitore:{{ partita['vincitore']}}</p>
+      <p>punteggio_vincitore:{{ partita['punteggio_vincitore']}}</p>
+
+    </header>
+  </article>
+  <hr>
+  {% endfor %}
+{% endblock %}

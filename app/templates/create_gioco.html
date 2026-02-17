@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Crea Nuovo gioco</h1>
+<form method="post">
+    <label for="nome">nome</label>
+    <input type="text" name="nome" id="nome" required>
+    <br>
+    <label for="numero_giocatori_massimo">numero_giocatori_massimo</label>
+    <input type="number" name="numero_giocatori_massimo" id="numero_giocatori_massimo" min="1" required>
+    <br>
+    <label for="durata_media">durata_media</label>
+    <input type="time" name="durata_media" id="durata_media" required>
+    <br>
+    <label for="categoria">categoria</label>
+    <input type="text" name="categoria" id="categoria" required>
+    <br>
+    <input type="submit" value="Crea">
+</form>
+{% endblock %}
