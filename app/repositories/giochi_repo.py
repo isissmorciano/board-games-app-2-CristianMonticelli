@@ -15,7 +15,7 @@ def create_gioco(nome, numero_giocatori_massimo, durata_media, categoria) -> Non
     db = get_db()
     query = '''
             INSERT INTO giochi (nome, numero_giocatori_massimo, durata_media, categoria)
-            VALUES (?,?,?,?,?)'''
+            VALUES (?,?,?,?)'''
     cursor = db.execute(query, (nome, numero_giocatori_massimo, durata_media, categoria,))
     db.commit()
     return cursor.lastrowid

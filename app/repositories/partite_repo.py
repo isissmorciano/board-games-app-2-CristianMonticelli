@@ -13,3 +13,12 @@ def get_partite_id(id):
     partite = db.execute(query,(id,)).fetchall()
 
     return [dict(partita) for partita in partite]
+
+def create_partite(gioco_id, data, vincitore, punteggio_vincitore) -> None:
+    db = get_db()
+    query = '''
+            INSERT INTO partite (gioco_id,data, vincitore, punteggio_vincitore)
+            VALUES (?,?,?,?)'''
+    cursor = db.execute(query, (gioco_id,data, vincitore, punteggio_vincitore,))
+    db.commit()
+    return cursor.lastrowid

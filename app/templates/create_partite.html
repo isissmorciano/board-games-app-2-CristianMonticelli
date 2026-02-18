@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Crea Nuovo gioco</h1>
+<form method="post">
+    <label for="data">data</label>
+    <input type="date" name="data" id="data" required>
+    <br>
+    <label for="vincitore">vincitore</label>
+    <input type="text" name="vincitore" id="vincitore" required>
+    <br>
+    <label for="punteggio_vincitore">punteggio vincitore</label>
+    <input type="number" name="punteggio_vincitore" id="punteggio_vincitore" required>
+    <br>
+    <input type="submit" value="Crea">
+</form>
+{% endblock %}

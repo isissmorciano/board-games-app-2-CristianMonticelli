@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>{{gioco["nome"]}}</h1>
+  <h1>{{ gioco['nome']}}</h1>
   {% for partita in partite %}
   <article>
     <header>
@@ -14,4 +14,5 @@
   </article>
   <hr>
   {% endfor %}
+  <a href="{{ url_for('main.nuove_partite_gioco', id=gioco['id']) }}"><button>+ partita</button></a>
 {% endblock %}
