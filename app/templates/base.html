@@ -6,11 +6,12 @@
     <!-- Qui potremmo linkare un CSS -->
     <style>
         body {  background-color: lightblue;font-family:color: red, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        a {  text-decoration: none; color: white;   }
         hr { border: 0; border-top: 1px solid #000000ff; }
         nav { background-color: blue; padding: 10px; border-radius: 10px; }
         p, footer { color: black; }
-        h2 { text-decoration: none; color: white;background-color: blue; padding: 10px; border-radius: 10px; }
+        .elimina { background: red }
+        .intestazione {background-color: blue}
+        .link {text-decoration: none; color: white;background-color: blue; padding: 10px; border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -23,8 +24,8 @@
         </div>
     {% endfor %}
     <nav>
-        <a href="{{ url_for('main.index') }}">Home</a>
-        <a href="{{ url_for('main.create_gioco') }}">Crea gioco</a>
+        <a href="{{ url_for('main.index') }}"><button class=intestazione>Home</button></a>
+        <a href="{{ url_for('main.create_gioco') }}"><button class=intestazione>Crea gioco</button></a>
 
     </nav>
     <main>

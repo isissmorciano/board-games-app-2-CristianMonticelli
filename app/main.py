@@ -45,7 +45,9 @@ def create_gioco():
 @bp.route('/partite_gioco/<int:id>')
 def partite_gioco(id):
     gioco = giochi_repo.get_gioco_id(id)
+    print(f'{gioco}------------------')
     partite = partite_repo.get_partite_id(gioco['id'])
+    print(partite)
     return render_template('partite_gioco.html',gioco=gioco,partite=partite)
 
 #2. Registrare partite per un gioco esistente
@@ -66,7 +68,12 @@ def nuove_partite_gioco(id):
             flash(error)
         else:
             gioco = giochi_repo.get_gioco_id(id)
-            partite = partite_repo.get_partite_id(gioco['id'])
             partite_repo.create_partite(id,data,vincitore,punteggio_vincitore)
-            return render_template('partite_gioco.html',gioco=gioco,partite=partite)
+            return redirect(url_for('main.partite_gioco',id = gioco['id']))
     return render_template('create_partite.html')
+
+@bp.route('/delete_partita/<int:id>/<int:id_gioco>')
+def delete_partita(id,id_gioco):
+    partite_repo.delete_partita(id)
+    print(id)
+    return redirect(url_for('main.partite_gioco',id = id_gioco))

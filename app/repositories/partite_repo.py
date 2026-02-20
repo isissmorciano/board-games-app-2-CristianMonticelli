@@ -22,3 +22,9 @@ def create_partite(gioco_id, data, vincitore, punteggio_vincitore) -> None:
     cursor = db.execute(query, (gioco_id,data, vincitore, punteggio_vincitore,))
     db.commit()
     return cursor.lastrowid
+
+def delete_partita(partita_id):
+    """Elimina un partite."""
+    db = get_db()
+    db.execute('DELETE FROM partite WHERE id = ?', (partita_id,))
+    db.commit()

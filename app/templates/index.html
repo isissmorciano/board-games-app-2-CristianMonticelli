@@ -5,7 +5,7 @@
   {% for gioco in lista_giochi %}
   <article>
     <header>
-      <h2><a href="{{ url_for('main.partite_gioco', id=gioco['id']) }}">{{ gioco['nome']}}<a></h2>
+      <h2><a href="{{ url_for('main.partite_gioco', id=gioco['id']) }}" class=link>{{ gioco['nome']}}<a></h2>
       <p>numero_giocatori_massimo:{{ gioco['numero_giocatori_massimo']}}</p>
       <p>durata_media:{{ gioco['durata_media']}}</p>
       <p>categoria:{{ gioco['categoria']}}</p>
