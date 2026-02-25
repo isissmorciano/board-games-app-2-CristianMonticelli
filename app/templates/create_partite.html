@@ -3,15 +3,15 @@
 {% block content %}
 <h1>Crea Nuovo gioco</h1>
 <form method="post">
-    <label for="data">data</label>
+    <label for="data">Data</label>
     <input type="date" name="data" id="data" required>
     <br>
-    <label for="vincitore">vincitore</label>
+    <label for="vincitore">Pincitore</label>
     <input type="text" name="vincitore" id="vincitore" required>
     <br>
-    <label for="punteggio_vincitore">punteggio vincitore</label>
+    <label for="punteggio_vincitore">Punteggio vincitore</label>
     <input type="number" name="punteggio_vincitore" id="punteggio_vincitore" required>
     <br>
-    <input type="submit" value="Crea">
+    <input class=crea type="submit" value="Crea">
 </form>
 {% endblock %}
